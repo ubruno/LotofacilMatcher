@@ -29,6 +29,7 @@ public class CSVReader {
 			int i = 0;
 			
 			LotofacilGame game = new LotofacilGame();
+			game.setBetSize(numbers.length);
 			for (String number : numbers) {
 				
 				game.getNumbers()[i] = Integer.parseInt(number);

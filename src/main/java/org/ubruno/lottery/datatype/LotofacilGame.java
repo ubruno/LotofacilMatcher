@@ -6,6 +6,8 @@ import java.util.List;
 public class LotofacilGame {
 
 	private int[] numbers = new int[] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+	
+	private int betSize = 0;
 
 	private List<Integer> matches = new ArrayList<Integer>();
 
@@ -88,5 +90,13 @@ public class LotofacilGame {
 
 	public int getHits() {
 		return hits;
+	}
+
+	public int getBetSize() {
+		return betSize;
+	}
+
+	public void setBetSize(int betSize) {
+		this.betSize = betSize;
 	}
 }

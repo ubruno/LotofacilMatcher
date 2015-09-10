@@ -33,7 +33,7 @@ public class Matcher {
 
 		int i = 1;
 		for (LotofacilGame game : games) {
-			buffer.append("<br />"+i+"&#186;");
+			buffer.append("<br />"+i+"&#186; - Jogo de "+ game.getBetSize()+ " n&#250;meros");
 			i++;
 			
 			game.setMatches(expectedResult);

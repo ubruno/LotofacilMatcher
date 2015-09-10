@@ -4,13 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class LotofacilGame {
-	
-	private int[] numbers = new int[15];
-	
+
+	private int[] numbers = new int[] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+
 	private List<Integer> matches = new ArrayList<Integer>();
 
 	private int hits = 0;
-	
+
 	public int[] getNumbers() {
 		return numbers;
 	}
@@ -23,37 +23,37 @@ public class LotofacilGame {
 		return matches;
 	}
 
-	public void setMatches(List<Integer> matches ) {
+	public void setMatches(List<Integer> matches) {
 		this.matches = matches;
 	}
 
-	private boolean hasMatch(int number){
-		
+	private boolean hasMatch(int number) {
+
 		for (Integer k : getMatches()) {
-			if(number == k.intValue())
+			if (number == k.intValue())
 				return true;
 		}
 		return false;
 	}
 
-	
 	public String processAndPrint() {
 		StringBuffer result = new StringBuffer();
 		result.append("<p>");
-		
+
 		int cont = 0;
-		
+
 		for (int i = 0; i < numbers.length; i++) {
-		
-			if(hasMatch(numbers[i])){
-				cont ++;
-				result.append("<b>"+numbers[i]+"</b>, " );
-			}else{
-				result.append(numbers[i]+", " );
+
+			if (numbers[i] != 0) {
+				if (hasMatch(numbers[i])) {
+					cont++;
+					result.append("<b>" + numbers[i] + "</b>, ");
+				} else {
+					result.append(numbers[i] + ", ");
+				}
 			}
-			
 		}
-		
+
 		String veredicto = " acertos :(";
 		hits = cont;
 		switch (hits) {
@@ -85,7 +85,7 @@ public class LotofacilGame {
 		result.append(" </p>\n");
 		return result.toString();
 	}
-	
+
 	public int getHits() {
 		return hits;
 	}
